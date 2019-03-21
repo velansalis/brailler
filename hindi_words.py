@@ -13,13 +13,14 @@ def convert_to_braille(word, write=False):
         f.write("Braille Sentence : ")
     # Printing the actual word
     print("\n" + word + "-", end=" ")
-
     # Loop over the word and find the braille equivalent
     for i in list(word):
         if write:
             f.write(data[i][0])
         print(data[i][0], end=" ")
-
+    f.write("\n")
+    f.flush()
+    f.close()
     # One line to end this up
     print()
 
