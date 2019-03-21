@@ -24,6 +24,7 @@ def convert_to_braille(word, write=False):
     print()
 
 
-# Word that needs to be converted
+# Word that needs to be converted.
+# Pass true as second parameter if you want the output in a file
 convert_to_braille(
     "अनुच्छेद १ सभी मनुष्यों को गौरव और अधिकारों के मामले में जन्मजात स्वतन्त्रता और समानता प्राप्त हैं", True)
