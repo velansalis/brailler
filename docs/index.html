@@ -4,9 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Hindi - Braille</title>
   </head>
   <body>
+    <div id="mainWrapper">
+      <form>
+        <textarea
+          rows="1"
+          name="inputText"
+          id="inputText"
+          onblur="convertToBraille(this)"
+          placeholder="Enter Hindi Text Here"
+        ></textarea>
+      </form>
+
+      <div id="brailleBox">
+        <p id="brailleText"></p>
+        <br />
+        <button class="btn">Get JSON</button>
+      </div>
+    </div>
+
     <script src="./script.js"></script>
   </body>
 </html>
