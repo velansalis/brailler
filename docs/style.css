@@ -1,6 +1,7 @@
 body,
 html {
   margin: 0;
+  font-family: "Courier New", Courier, monospace;
 }
 
 #mainWrapper {
@@ -15,7 +16,7 @@ html {
 textarea {
   overflow: hidden;
   padding: 10px;
-  width: 250px;
+  width: 260px;
   font-size: 14px;
   display: block;
   border: 0;
@@ -30,8 +31,16 @@ textarea {
 }
 
 #brailleText {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.04);
   width: auto;
+  font-size: 0.7em;
+}
+
+.copyIndicator {
+  opacity: 0;
+  transition: all 0.5s;
+  font-size: 0.7em;
+  color: green;
 }
 
 p {
@@ -40,11 +49,27 @@ p {
 }
 
 .btn {
-  width: 13em;
-  height: 3em;
+  width: auto;
+  font-size: 0.8em;
   background-color: #556677;
   color: white;
   outline: none;
-  margin: none;
+  margin: 1em 0;
   border: 5px solid black;
+  padding: 0.6em;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.noteBox {
+  text-align: center;
+  max-width: 40vw;
+  line-height: 2em;
+}
+
+@media only screen and (max-width: 768px) {
+  .noteBox {
+    max-width: 90vw;
+    font-size: 0.8em;
+  }
 }

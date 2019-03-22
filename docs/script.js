@@ -1,5 +1,7 @@
 let dataMapping;
 let braille = document.querySelector("#brailleText");
+let string = "";
+let indicator = document.querySelector(".copyIndicator");
 
 fetch("hindi-braille-mapping.json")
   .then(response =>
@@ -33,8 +35,25 @@ function convertToBraille(letter) {
       string += letter.charAt(i);
       continue;
     }
-    if (i % 20 == 0 && i != 0) string += "<br>";
+    if (i % 29 == 0 && i != 0) string += "<br>";
   }
-  console.log(letter + " - " + string);
+  if (letter.length == 0) string = "Braille will display here";
   braille.innerHTML = string;
 }
+
+function copy() {
+  indicator.setAttribute("style", "opacity:1;");
+  setTimeout(() => {
+    indicator.setAttribute("style", "opacity:0;");
+  }, 2000);
+  var inp = document.createElement("input");
+  document.body.appendChild(inp);
+  inp.value = string.split("<br>");
+  inp.select();
+  document.execCommand("copy", false);
+  inp.remove();
+}
+
+window.onload = () => {
+  braille.innerHTML = "Braille will display here";
+};

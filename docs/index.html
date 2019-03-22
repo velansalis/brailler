@@ -11,7 +11,7 @@
     <div id="mainWrapper">
       <form>
         <textarea
-          rows="1"
+          rows="3"
           name="inputText"
           id="inputText"
           onblur="convertToBraille(this)"
@@ -22,7 +22,17 @@
       <div id="brailleBox">
         <p id="brailleText"></p>
         <br />
-        <button class="btn">Get JSON</button>
+        <span class="copyIndicator">Copied!</span><br />
+        <button class="btn" onclick="copy()">Copy Braille Text</button>
+      </div>
+      <div class="noteBox">
+        This is open source Hindi to Braille Converter according to Bharathi
+        Braille Standards. Get the Hindi to Braille mappings in JSON format
+        <a
+          href="https://gist.github.com/velansalis/a467db04321a29414cd87e04b0c901d1"
+          target="_blank"
+          >here</a
+        >.
       </div>
     </div>
 
