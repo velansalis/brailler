@@ -19,7 +19,7 @@ def convert_to_braille(word, write=False):
     print()
 
 
-def convert_to_hindi(word, write=True):
+def convert_to_hindi(word, write=False):
     string = ""
     if write:
         f = open("braille-to-hindi-text.txt", "a")
@@ -41,4 +41,5 @@ def convert_to_hindi(word, write=True):
 
 
 #convert_to_braille("अनुच्छेद सभी मनुष्यों को गौरव ौर अधिकारों के मामले में जन्मजात स्वतन्त्रता ौर समानता प्राप्त हैं", True)
-#convert_to_hindi("⠁⠝⠥⠉⠈⠡⠑⠙⠀⠼⠁⠀⠎⠘⠔⠀⠍⠝⠥⠯⠈⠽⠕⠰⠀⠅⠕⠀⠛⠪⠗⠧⠀⠪⠗⠀⠁⠮⠊⠅⠜⠗⠕⠰⠀⠅⠑⠀⠍⠜⠍⠇⠑⠀⠍⠑⠰⠀⠚⠝⠈⠍⠚⠜⠞⠀⠎⠈⠧⠞⠝⠈⠞⠈⠗⠞⠜⠀⠪⠗⠀⠎⠍⠜⠝⠞⠜⠀⠏⠈⠗⠜⠏⠈⠞⠀⠓⠌⠰", True)
+convert_to_hindi(
+    "⠁⠝⠥⠉⠈⠡⠑⠙⠀⠎⠘⠔⠀⠍⠝⠥⠯⠈⠽⠕⠰⠀⠅⠕⠀⠛⠪⠗⠧⠀⠪⠗⠀⠁⠮⠊⠅⠜⠗⠕⠰⠀⠅⠑⠀⠍⠜⠍⠇⠑⠀⠍⠑⠰⠀⠚⠝⠈⠍⠚⠜⠞⠀⠎⠈⠧⠞⠝⠈⠞⠈⠗⠞⠜⠀⠪⠗⠀⠎⠍⠜⠝⠞⠜⠀⠏⠈⠗⠜⠏⠈⠞⠀⠓⠌⠰", True)
