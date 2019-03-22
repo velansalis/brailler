@@ -3,7 +3,7 @@ let braille = document.querySelector("#brailleText");
 let string = "";
 let indicator = document.querySelector(".copyIndicator");
 
-fetch("hindi-braille-mapping.json")
+fetch("../_data/hindi-braille-mapping.json")
   .then(response =>
     response.json().then(data => {
       dataMapping = data;
