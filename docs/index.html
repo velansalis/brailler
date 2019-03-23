@@ -8,38 +8,26 @@
     <title>Hindi - Braille</title>
   </head>
   <body>
-    <div id="mainWrapper">
-      <form>
+    <main id="app">
+      <nav class="toolbar">
+        <i class="material-icons tb-icon">translate</i>
+        <span class="tb-title">Hindi to Braille Translator</span>
+      </nav>
+
+      <div class="container">
         <textarea
-          rows="3"
-          name="inputText"
-          id="inputText"
+          autofocus
+          class="langer fromlang"
+          placeholder="Type Hindi text here !"
           onblur="convertToBraille(this)"
-          placeholder="Enter Hindi Text Here"
-        ></textarea>
-      </form>
-
-      <div id="brailleBox">
-        <p id="brailleText"></p>
-        <br />
-        <span class="copyIndicator">Copied!</span><br />
-        <button class="btn" onclick="copy()">Copy Braille Text</button>
-      </div>
-      <div class="noteBox">
-        This is open source Hindi to Braille Converter according to Bharathi
-        Braille Standards. Get the Hindi to Braille mappings in JSON format
-        <a
-          href="https://gist.github.com/velansalis/a467db04321a29414cd87e04b0c901d1"
-          target="_blank"
-          >here</a
         >
-        and Source code
-        <a href="https://github.com/velansalis/hindi-braille">here</a>.<br />
-        By
-        <a href="https://velansalis.github.io" target="_blank">Velan Salis</a>
+        </textarea>
+        <div class="langer tolang">
+          <div class="gg"></div>
+          <div class="translation" id="brailleText"></div>
+        </div>
       </div>
-    </div>
-
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>

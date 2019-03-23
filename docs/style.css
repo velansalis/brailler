@@ -1,75 +1,157 @@
-body,
-html {
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Gochi+Hand");
+
+body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Gochi Hand", cursive;
 }
 
-#mainWrapper {
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.toolbar {
+  height: 40px;
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  color: #6666ff;
 }
 
-textarea {
-  overflow: hidden;
+.tb-icon {
   padding: 10px;
-  width: 260px;
-  font-size: 14px;
-  display: block;
-  border: 0;
-  outline: none;
-  border-bottom: 6px solid #556677;
+  border-radius: 50%;
+  margin-top: -8px;
+  cursor: pointer;
 }
 
-#brailleBox {
-  min-width: 100vw;
-  text-align: center;
-  font-size: 1.1em;
+.tb-icon:active {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
-#brailleText {
-  background: rgba(0, 0, 0, 0.04);
-  width: auto;
-  font-size: 0.7em;
+.tb-title {
+  margin-left: 15px;
+  margin-top: 0px;
+  font-weight: 500;
+  font-size: 22px;
+  position: absolute;
 }
 
-.copyIndicator {
-  opacity: 0;
-  transition: all 0.5s;
-  font-size: 0.7em;
-  color: green;
+.container {
+  display: flex;
+  padding: 1rem;
 }
-
-p {
-  display: inline-block;
-  margin: 1em 0;
-}
-
-.btn {
-  width: auto;
-  font-size: 0.8em;
-  background-color: #556677;
-  color: white;
-  outline: none;
-  margin: 1em 0;
-  border: 5px solid black;
-  padding: 0.6em;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.noteBox {
-  text-align: center;
-  max-width: 40vw;
-  line-height: 2em;
-}
-
-@media only screen and (max-width: 768px) {
-  .noteBox {
-    max-width: 90vw;
-    font-size: 0.8em;
+@media screen and (max-width: 720px) {
+  .container {
+    flex-wrap: wrap;
   }
+}
+
+.langer {
+  width: 100%;
+  margin-right: 10px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  position: relative;
+}
+
+.fromlang {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  font-size: 1.25rem;
+  padding: 10px 10px 150px;
+  color: rgba(0, 0, 0, 0.8);
+  -webkit-appearance: none;
+}
+@media screen and (max-width: 720px) {
+  .fromlang {
+    margin: 10px 0;
+  }
+}
+
+.fromlang:focus {
+  border: 2px solid #6666ff;
+}
+
+.tolang {
+  background-color: #f5f5f5;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.06),
+    0 2px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, 0.06);
+}
+
+.lang {
+  list-style-type: none;
+  width: auto;
+  display: inline-block;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  font-weight: 600;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.selected {
+  border-bottom: 2px solid #6666ff;
+  color: #6666ff;
+}
+
+.translation {
+  padding: 20px;
+  font-size: 20px;
+  font-family: Roboto;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+}
+@media screen and (max-width: 720px) {
+  .translation {
+    margin-bottom: 50px;
+  }
+}
+
+.sync {
+  position: absolute;
+  color: #6666ff;
+  top: 160px;
+  right: 10px;
+  cursor: pointer;
+}
+@media screen and (max-width: 720px) {
+  .sync {
+    right: 10px;
+    top: 60px;
+  }
+}
+
+.unsync {
+  opacity: 0.3;
+  color: black;
+}
+
+.sync.play {
+  right: 45px;
+  color: black;
+  opacity: 0.3;
+}
+
+.sync.play:hover {
+  color: #6666ff;
+  opacity: 1;
+}
+
+.link {
+  bottom: 10px;
+  position: absolute;
+  margin-left: 10px;
+  color: #6666ff;
+  text-decoration: none;
+}
+
+.link span {
+  margin-left: 32px;
+}
+
+.copy {
+  margin-top: -3px;
+  position: absolute;
 }
