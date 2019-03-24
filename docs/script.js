@@ -1,12 +1,13 @@
 let dataMapping;
 let braille = document.querySelector("#brailleText");
 let string = ""; // Variable to hold Braille text
+let indicator = document.querySelector("#checkicon");
 
 fetch("hindi-braille-mapping.json")
   .then(response =>
     response.json().then(data => {
       dataMapping = data;
-      console.log("JSON loaded..");
+      console.log("Hindi JSON loaded..");
     })
   )
   .catch(err => {
@@ -33,13 +34,13 @@ function convertToBraille(letter) {
 }
 
 function copy() {
-  indicator.setAttribute("style", "opacity:1;");
+  indicator.setAttribute("style", "opacity:1;float:right;color:green;");
   setTimeout(() => {
-    indicator.setAttribute("style", "opacity:0;");
+    indicator.setAttribute("style", "opacity:0;float:right;color:green;");
   }, 2000);
   var inp = document.createElement("input");
   document.body.appendChild(inp);
-  inp.value = string.split("<br>");
+  inp.value = braille.innerText;
   inp.select();
   document.execCommand("copy", false);
   inp.remove();
