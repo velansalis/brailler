@@ -3,7 +3,7 @@ let string = "";
 let braille = document.querySelector("#brailleText");
 let toast = document.getElementById("toast");
 
-fetch("hindi-braille-mapping.json")
+fetch("data/hindi-braille-mapping.json")
   .then(response =>
     response.json().then(data => {
       dataMapping = data;
