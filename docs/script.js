@@ -1,7 +1,7 @@
 let dataMapping;
 let string = "";
 let braille = document.querySelector("#brailleText");
-let indicator = document.querySelector("#checkicon");
+let toast = document.getElementById("toast");
 
 fetch("hindi-braille-mapping.json")
   .then(response =>
@@ -34,6 +34,10 @@ function convertToBraille(letter) {
 }
 
 function copy() {
+  toast.style.height = "40px";
+  window.setTimeout(() => {
+    toast.style.height = "0px";
+  }, 3000);
   var inp = document.createElement("input");
   document.body.appendChild(inp);
   inp.value = braille.innerText;

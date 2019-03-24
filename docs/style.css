@@ -117,3 +117,15 @@ nav {
 .layer2 {
   background-color: rgba(0, 0, 0, 0.2);
 }
+#toast {
+  position: fixed;
+  width: 100vw;
+  height: 0px;
+  background: #39a82f;
+  color: white;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
