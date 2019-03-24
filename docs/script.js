@@ -1,6 +1,5 @@
 let dataMapping;
 let braille = document.querySelector("#brailleText");
-let indicator = document.querySelector(".copyIndicator");
 let string = ""; // Variable to hold Braille text
 
 fetch("hindi-braille-mapping.json")
@@ -27,11 +26,10 @@ function convertToBraille(letter) {
     }
   }
   if (letter.length == 0) {
-    string = "Braille will display here";
+    braille.innerText = "Braille will display here";
   } else {
-    string.replace(" ", "1");
+    splitWords(letter, string);
   }
-  braille.innerText = string;
 }
 
 function copy() {
@@ -46,3 +44,28 @@ function copy() {
   document.execCommand("copy", false);
   inp.remove();
 }
+
+function splitWords(hinstring, braillestring) {
+  let renderString = "";
+  let color = ["red", "blue"];
+  if (hinstring != undefined || braillestring != undefined) {
+    hin = hinstring.split(" ");
+    btext = braillestring.split(" ");
+    hin.forEach((element, index) => {
+      renderString +=
+        "<span class='brailleText tool " +
+        color[index % 2] +
+        "' data-tip=" +
+        element +
+        ">" +
+        btext[index] +
+        "</span>";
+    });
+  }
+  braille.innerHTML = renderString;
+}
+
+window.onload = () => {
+  braille.innerText = "Braille will display here";
+  document.querySelector(".fromlang").innerHTML = "";
+};
