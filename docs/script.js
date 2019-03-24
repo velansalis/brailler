@@ -35,8 +35,10 @@ function convertToBraille(letter) {
 
 function copy() {
   toast.style.height = "40px";
+  toast.style.fontSize = "1em";
   window.setTimeout(() => {
     toast.style.height = "0px";
+    toast.style.fontSize = "0px";
   }, 3000);
   var inp = document.createElement("input");
   document.body.appendChild(inp);
@@ -64,6 +66,18 @@ function splitWords(hinstring, braillestring) {
     });
   }
   braille.innerHTML = renderString;
+}
+
+function toggleMenu() {
+  let elem = document.getElementById("sidenav");
+  let body = document.getElementsByTagName("body")[0];
+  if (elem.style.width == "4em") {
+    elem.style.width = "0em";
+    body.style.marginLeft = "0em";
+  } else {
+    elem.style.width = "4em";
+    body.style.marginLeft = "4em";
+  }
 }
 
 var textarea = document.querySelector("textarea");
