@@ -1,6 +1,6 @@
 let dataMapping;
+let string = "";
 let braille = document.querySelector("#brailleText");
-let string = ""; // Variable to hold Braille text
 let indicator = document.querySelector("#checkicon");
 
 fetch("hindi-braille-mapping.json")
@@ -27,17 +27,13 @@ function convertToBraille(letter) {
     }
   }
   if (letter.length == 0) {
-    braille.innerText = "Braille will display here";
+    braille.innerText = "";
   } else {
     splitWords(letter, string);
   }
 }
 
 function copy() {
-  indicator.setAttribute("style", "opacity:1;float:right;color:green;");
-  setTimeout(() => {
-    indicator.setAttribute("style", "opacity:0;float:right;color:green;");
-  }, 2000);
   var inp = document.createElement("input");
   document.body.appendChild(inp);
   inp.value = braille.innerText;
@@ -48,7 +44,7 @@ function copy() {
 
 function splitWords(hinstring, braillestring) {
   let renderString = "";
-  let color = ["red", "blue"];
+  let color = ["layer1", "layer2"];
   if (hinstring != undefined || braillestring != undefined) {
     hin = hinstring.split(" ");
     btext = braillestring.split(" ");
@@ -66,7 +62,18 @@ function splitWords(hinstring, braillestring) {
   braille.innerHTML = renderString;
 }
 
+var textarea = document.querySelector("textarea");
+textarea.addEventListener("keydown", autosize);
+function autosize() {
+  var el = this;
+  setTimeout(function() {
+    el.style.cssText = "height:auto; padding:0";
+    el.style.cssText = "-moz-box-sizing:content-box";
+    el.style.cssText = "height:" + el.scrollHeight + "px";
+  }, 0);
+}
+
 window.onload = () => {
-  braille.innerText = "Braille will display here";
-  document.querySelector(".fromlang").innerHTML = "";
+  braille.innerText = "";
+  document.querySelector("#hinditext").innerHTML = "";
 };

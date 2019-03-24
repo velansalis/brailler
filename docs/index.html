@@ -5,44 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Hindi - Braille</title>
+    <title>Braille Translator</title>
   </head>
   <body>
-    <main id="app">
-      <nav class="toolbar">
-        <i class="material-icons tb-icon">translate</i>
-        <span class="tb-title">Hindi to Braille Translator</span>
-      </nav>
-
-      <div class="container">
-        <textarea
-          autofocus
-          class="fromlang"
-          placeholder="Type Hindi text here !"
-          onblur="convertToBraille(this)"
-        >
-        </textarea>
-        <div class="tolang">
-          <div class="translation" id="brailleText"></div>
-        </div>
-        <div class="copyText">
-          <button class="btn" onclick="copy()">Copy Braille Text</button>
-          <i
-            class="material-icons"
-            id="checkicon"
-            style="float:right;color:green;"
-            >check_circle</i
-          >
-        </div>
-        <div class="footerlinks">
-          <a
-            href="https://gist.github.com/velansalis/a467db04321a29414cd87e04b0c901d1"
-            >API</a
-          ><a href="https://github.com/velansalis/hindi-braille">Contribute</a
-          ><a href="https://velansalis.github.io">Get In Touch</a>
-        </div>
+    <nav>
+      Braille Translator
+    </nav>
+    <div class="container shadow">
+      <div class="info">Enter Hindi Text Here</div>
+      <textarea
+        class="text"
+        autofocus
+        name="hinditext"
+        id="hinditext"
+        onblur="convertToBraille(this)"
+      ></textarea>
+    </div>
+    <div class="container shadow">
+      <div class="info">
+        Braille text will appear here
+        <a href="" style="float:right;color:white;">
+          <i class="material-icons">content_copy</i>
+        </a>
       </div>
-    </main>
+      <div id="brailleText"></div>
+    </div>
     <script src="./script.js"></script>
   </body>
 </html>
