@@ -3,19 +3,12 @@ let string = "";
 let braille = document.querySelector("#brailleText");
 let toast = document.getElementById("toast");
 
-fetch("data/hindi-braille-mapping.json")
-  .then(response =>
-    response.json().then(data => {
-      dataMapping = data;
-      console.log("Hindi JSON loaded..");
-    })
-  )
-  .catch(err => {
-    console.log(err);
-  });
+import "./style.css";
+
+console.log("New one3");
 
 // Hindi to Braille Conversion
-function convertToBraille(letter) {
+window.convertToBraille = letter => {
   letter = letter.value;
   string = "";
   for (let i = 0; i < letter.length; i++) {
@@ -31,9 +24,9 @@ function convertToBraille(letter) {
   } else {
     splitWords(letter, string);
   }
-}
+};
 
-function copy() {
+window.copy = () => {
   toast.style.height = "40px";
   toast.style.fontSize = "1em";
   window.setTimeout(() => {
@@ -46,15 +39,15 @@ function copy() {
   inp.select();
   document.execCommand("copy", false);
   inp.remove();
-}
+};
 
-function splitWords(hinstring, braillestring) {
+window.splitWords = (hinstring, braillestring) => {
+  console.log(hinstring, braillestring);
   let renderString = "";
   let color = ["layer1", "layer2"];
   if (hinstring != undefined || braillestring != undefined) {
-    hin = hinstring.split(" ");
-    btext = braillestring.split(" ");
-    hin.forEach((element, index) => {
+    let btext = braillestring.split(" ");
+    hinstring.split(" ").forEach((element, index) => {
       renderString +=
         "<span class='brailleText tool " +
         color[index % 2] +
@@ -66,9 +59,9 @@ function splitWords(hinstring, braillestring) {
     });
   }
   braille.innerHTML = renderString;
-}
+};
 
-function toggleMenu() {
+window.toggleMenu = () => {
   let elem = document.getElementById("sidenav");
   let body = document.getElementsByTagName("body")[0];
   if (elem.style.width == "4em") {
@@ -78,7 +71,7 @@ function toggleMenu() {
     elem.style.width = "4em";
     body.style.marginLeft = "4em";
   }
-}
+};
 
 var textarea = document.querySelector("textarea");
 textarea.addEventListener("keydown", autosize);
@@ -92,6 +85,16 @@ function autosize() {
 }
 
 window.onload = () => {
-  braille.innerText = "";
-  document.querySelector("#hinditext").innerHTML = "";
+  fetch("data/hindi-braille-mapping.json")
+    .then(response =>
+      response.json().then(data => {
+        dataMapping = data;
+        braille.innerText = "";
+        document.querySelector("#hinditext").innerHTML = "";
+        console.log("Hindi JSON loaded..");
+      })
+    )
+    .catch(err => {
+      console.log(err);
+    });
 };
