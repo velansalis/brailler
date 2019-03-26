@@ -5,8 +5,6 @@ let toast = document.getElementById("toast");
 
 import "./style.css";
 
-console.log("New one3");
-
 // Hindi to Braille Conversion
 window.convertToBraille = letter => {
   letter = letter.value;
