@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/velansalis/hindi-to-braille.conv.git"
+    "url": "git+https://github.com/velansalis/brailler.git"
   },
   "author": "Velan Salis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/velansalis/hindi-to-braille.conv/issues"
+    "url": "https://github.com/velansalis/brailler/issues"
   },
-  "homepage": "https://github.com/velansalis/hindi-to-braille.conv#readme",
+  "homepage": "https://velansalis.github.io/brailler",
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",

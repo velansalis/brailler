@@ -1,0 +1,36 @@
+nav {
+  width: 100vw;
+  height: 4em;
+  background-color: #3d5fcc;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.5em;
+  flex-grow: 3;
+}
+
+.menu {
+  cursor: pointer;
+}
+
+#sidenav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 70px;
+  background: #464646;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 0px;
+  transition: all 0.5s;
+}
+
+#sidenav > a > i {
+  cursor: pointer;
+  padding: 1em 0;
+  color: white;
+}

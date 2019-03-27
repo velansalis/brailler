@@ -1,6 +1,11 @@
 import { convertToBraille } from "./js/convert";
 import { copy, toggleMenu } from "./js/domevents";
-import "./css/style.css";
+
+// Importing styles
+import "./css/fonts.css";
+import "./css/menu.css";
+import "./css/tooltip.css";
+import "./css/util.css";
 
 // Dom Events
 window.convertToBraille = convertToBraille; // Convert to Braille click
