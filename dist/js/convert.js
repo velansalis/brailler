@@ -32,7 +32,7 @@ const splitWords = (hinstring, braillestring) => {
         element +
         ">" +
         btext[index] +
-        "</span>";
+        "</span>&nbsp;&nbsp;";
     });
   }
   braille.innerHTML = renderString;

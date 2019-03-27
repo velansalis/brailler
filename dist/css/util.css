@@ -31,6 +31,16 @@ body {
   background-color: #3e474f;
   color: white;
 }
+.infoicons {
+  border: 0;
+  margin: 0;
+  background: transparent;
+  float: right;
+  outline: none;
+  padding: 0 0.6em;
+  color: white;
+  cursor: pointer;
+}
 .text {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

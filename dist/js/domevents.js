@@ -1,4 +1,4 @@
-import { textarea } from "./domnodes";
+import { textarea, braille } from "./domnodes";
 
 const copy = () => {
   toast.style.height = "40px";
@@ -13,6 +13,10 @@ const copy = () => {
   inp.select();
   document.execCommand("copy", false);
   inp.remove();
+};
+
+const download = () => {
+  console.log("Downloading");
 };
 
 const toggleMenu = () => {
@@ -34,4 +38,4 @@ const autosize = () => {
   this.style.cssText = "height:" + this.scrollHeight + "px";
 };
 
-export { copy, toggleMenu, textarea };
+export { copy, toggleMenu, textarea, download };

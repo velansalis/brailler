@@ -44,9 +44,12 @@
     <div class="container shadow">
       <div class="info">
         Braille text
-        <a href="#" onclick="copy()" style="float:right;color:white;">
+        <button class="infoicons" onclick="download()">
+          <i class="material-icons">file_download</i>
+        </button>
+        <button class="infoicons" onclick="copy()">
           <i class="material-icons">content_copy</i>
-        </a>
+        </button>
       </div>
       <div id="brailleText"></div>
       <div class="information">
