@@ -7,6 +7,9 @@ import "./css/menu.css";
 import "./css/tooltip.css";
 import "./css/util.css";
 
+window.fromLangText = "";
+window.brailleLangText = "";
+
 // Dom Events
 window.convertToBraille = convertToBraille; // Convert to Braille click
 window.copy = copy; // Copy click

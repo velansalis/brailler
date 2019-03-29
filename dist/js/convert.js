@@ -22,8 +22,9 @@ const convertToBraille = letter => {
 const splitWords = (hinstring, braillestring) => {
   let renderString = "";
   let color = ["layer1", "layer2"];
+  let btext;
   if (hinstring != undefined || braillestring != undefined) {
-    let btext = braillestring.split(" ");
+    btext = braillestring.split(" ");
     hinstring.split(" ").forEach((element, index) => {
       renderString +=
         "<span class='brailleText tool " +
@@ -35,6 +36,8 @@ const splitWords = (hinstring, braillestring) => {
         "</span>&nbsp;&nbsp;";
     });
   }
+  window.fromLangText = hinstring.split(" ");
+  window.brailleLangText = btext;
   braille.innerHTML = renderString;
 };
 

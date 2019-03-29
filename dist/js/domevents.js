@@ -16,7 +16,21 @@ const copy = () => {
 };
 
 const download = () => {
-  console.log("Downloading");
+  if (fromLangText != undefined || fromLangText != "") {
+    let fromLangText = window.fromLangText;
+    let brailleText = window.brailleLangText;
+    let json = {};
+    fromLangText.forEach((element, index) => {
+      json[element] = brailleText[index];
+    });
+    var dataStr =
+      "data:text/json;charset=utf-8," +
+      encodeURIComponent(JSON.stringify(json));
+    var dlAnchorElem = document.getElementById("downloadAnchorElem");
+    dlAnchorElem.setAttribute("href", dataStr);
+    dlAnchorElem.setAttribute("download", "translate.json");
+    dlAnchorElem.click();
+  }
 };
 
 const toggleMenu = () => {

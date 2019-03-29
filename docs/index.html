@@ -15,7 +15,13 @@
     <nav>
       <i class="material-icons menu" onclick="toggleMenu()">menu</i>
       Brailler
-      <i class="material-icons">translate</i>
+      <a
+        target="_blank"
+        href="https://translate.google.com"
+        style="color:white"
+      >
+        <i class="material-icons menu">translate</i>
+      </a>
     </nav>
     <div id="sidenav">
       <a href="https://velansalis.github.io" target="_blank">
@@ -56,6 +62,16 @@
         Hover/Click over the braille text to inspect
       </div>
     </div>
+    <footer>
+      <span
+        >An Open Source Project by
+        <a target="_blank" href="https://velansalis.github.io" class="hover-a"
+          >Velan Salis</a
+        >
+        <a id="downloadAnchorElem" style="display:none"></a>
+      </span>
+      <br />
+    </footer>
 
     <div id="toast">Braille text copied to clipboard</div>
 

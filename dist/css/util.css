@@ -86,3 +86,18 @@ body {
   color: #3e474f;
   text-align: left;
 }
+footer {
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hover-a {
+  text-decoration: none;
+  color: blue;
+  transition: all 0.5s;
+}
+.hover-a:hover {
+  color: brown;
+}
