@@ -1,4 +1,3 @@
-import { braille, fromLang } from "./domnodes";
 let dataMapping = {};
 let gistid = "a467db04321a29414cd87e04b0c901d1";
 
