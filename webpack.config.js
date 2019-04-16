@@ -1,10 +1,11 @@
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./dist/script.js", // Entry file. This is where the webpack starts executing.
+  entry: "./dist/js/script.js", // Entry file. This is where the webpack starts executing.
   output: {
     filename: "bundle.js", // This is the output file
     path: path.resolve(__dirname, "docs") // The output file will be saved in dist folder
@@ -12,7 +13,8 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "bundle.css"
-    })
+    }),
+    new CopyPlugin([{ from: "dist/index.html", to: "" }])
   ],
   optimization: {
     minimizer: [

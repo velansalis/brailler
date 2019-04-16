@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="Brailler"
+      description="Brailler is an open source braille translator with javascript. The souce code and the official API is available in github for further contributions."
+    />
+    <link rel="stylesheet" href="./bundle.css" />
+    <title>Brailler | Translator</title>
+  </head>
+  <body>
+    <nav>
+      <i class="material-icons menu" onclick="toggleMenu()">menu</i>
+      Brailler
+      <a
+        target="_blank"
+        href="https://translate.google.com"
+        style="color:white"
+      >
+        <i class="material-icons menu">translate</i>
+      </a>
+    </nav>
+    <div id="sidenav">
+      <a href="https://velansalis.github.io" target="_blank">
+        <i class="material-icons">account_circle</i>
+      </a>
+      <a
+        href="https://gist.github.com/velansalis/a467db04321a29414cd87e04b0c901d1"
+        target="_blank"
+      >
+        <i class="material-icons">https</i>
+      </a>
+      <a href="https://github.com/velansalis/brailler" target="_blank">
+        <i class="material-icons">developer_mode</i>
+      </a>
+    </div>
+    <div class="container shadow">
+      <div class="info">Enter Hindi Text Here</div>
+      <textarea
+        class="text"
+        autofocus
+        name="hinditext"
+        id="fromLang"
+        onblur="convertToBraille(this)"
+      ></textarea>
+    </div>
+    <div class="container shadow">
+      <div class="info">
+        Braille text
+        <button class="infoicons" onclick="download()">
+          <i class="material-icons">file_download</i>
+        </button>
+        <button class="infoicons" onclick="copy()">
+          <i class="material-icons">content_copy</i>
+        </button>
+      </div>
+      <div id="brailleText"></div>
+      <div class="information">
+        Hover/Click over the braille text to inspect
+      </div>
+    </div>
+    <footer>
+      <span
+        >An Open Source Project by
+        <a target="_blank" href="https://velansalis.github.io" class="hover-a"
+          >Velan Salis</a
+        >
+        <a id="downloadAnchorElem" style="display:none"></a>
+      </span>
+      <br />
+    </footer>
+
+    <div id="toast">Braille text copied to clipboard</div>
+
+    <script src="./bundle.js"></script>
+  </body>
+</html>

@@ -1,11 +1,11 @@
-import { convertToBraille } from "./js/convert";
-import { copy, toggleMenu, download } from "./js/domevents";
+import { convertToBraille } from "./convert";
+import { copy, toggleMenu, download } from "./domevents";
 
 // Importing styles
-import "./css/fonts.css";
-import "./css/menu.css";
-import "./css/tooltip.css";
-import "./css/util.css";
+import "../css/fonts.css";
+import "../css/menu.css";
+import "../css/tooltip.css";
+import "../css/util.css";
 
 window.fromLangText = "";
 window.brailleLangText = "";
