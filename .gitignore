@@ -4,3 +4,7 @@ node_modules
 package-lock.json
 _*.js
 experiment
+.vscode
+env
+__pycache__
+output.txt
