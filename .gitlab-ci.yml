@@ -1,7 +1,11 @@
 pages:
   stage: deploy
+  services:
+    - node:latest
+  image: node:latest
   script:
     - mkdir .public
+    - npm install
     - npm run build
     - cp -r docs .public
     - mv .public public
