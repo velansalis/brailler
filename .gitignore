@@ -8,3 +8,5 @@ experiment
 env
 __pycache__
 output.txt
+
+docs

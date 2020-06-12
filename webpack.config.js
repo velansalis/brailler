@@ -5,7 +5,7 @@ const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./assets/js/script.js", // Entry file. This is where the webpack starts executing.
+  entry: "./dist/js/script.js", // Entry file. This is where the webpack starts executing.
   output: {
     filename: "bundle.js", // This is the output file
     path: path.resolve(__dirname, "docs") // The output file will be saved in assets folder
@@ -14,7 +14,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "bundle.css"
     }),
-    new CopyPlugin([{ from: "assets/index.html", to: "" }])
+    new CopyPlugin([{ from: "dist/index.html", to: "" }])
   ],
   optimization: {
     minimizer: [

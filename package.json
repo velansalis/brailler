@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/velansalis/brailler.git"
+    "url": "git+https://gitlab.com/velansalis/brailler.git"
   },
   "author": "Velan Salis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/velansalis/brailler/issues"
+    "url": "https://gitlab.com/velansalis/brailler/issues"
   },
-  "homepage": "https://velansalis.github.io/brailler",
+  "homepage": "https://velansalis.gitlab.io/brailler",
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
